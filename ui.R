@@ -17,6 +17,7 @@ ui <- dashboardPage(
  
   
   dashboardBody(
+    
     tabItems(
       
       tabItem(tabName = "dashboard",
@@ -28,7 +29,17 @@ ui <- dashboardPage(
       valueBoxOutput("progressBox"),
       
       valueBoxOutput("approvalBox")
+    ),
+    fluidRow(
+      box(DT::dataTableOutput("table1"))
     )
+    # fluidRow(
+    #   column(2),
+    #   column(8, DT::dataTableOutput('total_sales')),
+    #   column(2)
+    # )
+    
+    # h2("매출 데이터는 29일(월)부터 4일(일)까지입니다.")
     
     
   )
