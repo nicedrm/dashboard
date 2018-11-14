@@ -36,6 +36,10 @@ server <- function(input, output) {
     )
   })
   
+  output$help_text <- renderText({
+    paste("위의 데이터는", tsbd$날짜[369], "의 데이터입니다.")
+  })
+  
   output$table1 <- DT::renderDataTable(tsbd[,-1], server = FALSE, filter = 'top')  
   
   # #creating the valueBoxOutput content
