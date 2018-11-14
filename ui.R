@@ -31,6 +31,11 @@ ui <- dashboardPage(
       valueBoxOutput("approvalBox")
     ),
     fluidRow(
+      column(2),
+      column(8, h5("위의 데이터는 11월 07일의 데이터입니다.")),
+      column(2)
+      ),
+    fluidRow(
       box(DT::dataTableOutput("table1"))
     )
     # fluidRow(
