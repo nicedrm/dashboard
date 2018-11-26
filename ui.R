@@ -38,39 +38,64 @@ ui <- dashboardPage(
     fluidRow(
       box(DT::dataTableOutput("table1"))
     ),
-
-    tabsetPanel(
-      id ="tab",
-      tabPanel(
-        title = "detailed sales",
-        value = "page1",
-        #직전주 매출, 직전주 roas, 금월 예상매출
-        # fluidRow(
-        #   valueBoxOutput("weeksales"),
-        #   valueBoxOutput("weekroas"),
-        #   valueBoxOutput("monthsales")
-        # ),
-      
     fluidRow(
-      selectInput(
-        inputId = "product",
-        label = "Product:",
-        choices = product_list,
-        selected = "1",
-        selectize = FALSE
+      
+      valueBoxOutput("vbox1", width = 2),
+      valueBoxOutput("vbox2", width = 2),
+      valueBoxOutput("vbox3", width = 2),
+      valueBoxOutput("vbox4", width = 2),
+      valueBoxOutput("vbox5", width = 2),
+      valueBoxOutput("vbox6", width = 2)
       ),
-      selectInput(
-        inputId = "month",
-        label = "Month:",
-        choices = month_list,
-        selected = 99,
-        size = 13,
-        selectize = FALSE
-      ),
-      actionLink("remove", "Remove detail tabs")
+    fluidRow(
+      valueBoxOutput("vbox7", width = 2),
+      valueBoxOutput("vbox8", width = 2),
+      valueBoxOutput("vbox9", width = 2),
+      valueBoxOutput("vbox10", width = 2),
+      valueBoxOutput("vbox11", width = 2),
+      valueBoxOutput("vbox12", width = 2)
+    ),
+    fluidRow(
+      valueBoxOutput("vbox13", width = 2),
+      valueBoxOutput("vbox14", width = 2),
+      valueBoxOutput("vbox15", width = 2),
+      valueBoxOutput("vbox16", width = 2),
+      valueBoxOutput("vbox17", width = 2),
+      valueBoxOutput("vbox18", width = 2)
     )
-      )
-    )
+
+    # tabsetPanel(
+    #   id ="tab",
+    #   tabPanel(
+    #     title = "detailed sales",
+    #     value = "page1",
+    #     #직전주 매출, 직전주 roas, 금월 예상매출
+    #     fluidRow(
+    #       valueBoxOutput("weeksales"),
+    #       valueBoxOutput("weekroas"),
+    #       valueBoxOutput("monthsales")
+    #     ),
+    #   
+    # fluidRow(
+    #   selectInput(
+    #     inputId = "product",
+    #     label = "Product:",
+    #     choices = product_list,
+    #     selected = "1",
+    #     selectize = FALSE
+    #   ),
+    #   selectInput(
+    #     inputId = "month",
+    #     label = "Month:",
+    #     choices = month_list,
+    #     selected = 99,
+    #     size = 13,
+    #     selectize = FALSE
+    #   ),
+    #   actionLink("remove", "Remove detail tabs")
+    # )
+    #   )
+    # )
     # fluidRow(
     #   column(2),
     #   column(8, DT::dataTableOutput('total_sales')),
