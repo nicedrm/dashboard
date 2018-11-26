@@ -37,6 +37,39 @@ ui <- dashboardPage(
       ),
     fluidRow(
       box(DT::dataTableOutput("table1"))
+    ),
+
+    tabsetPanel(
+      id ="tab",
+      tabPanel(
+        title = "detailed sales",
+        value = "page1",
+        #직전주 매출, 직전주 roas, 금월 예상매출
+        # fluidRow(
+        #   valueBoxOutput("weeksales"),
+        #   valueBoxOutput("weekroas"),
+        #   valueBoxOutput("monthsales")
+        # ),
+      
+    fluidRow(
+      selectInput(
+        inputId = "product",
+        label = "Product:",
+        choices = product_list,
+        selected = "1",
+        selectize = FALSE
+      ),
+      selectInput(
+        inputId = "month",
+        label = "Month:",
+        choices = month_list,
+        selected = 99,
+        size = 13,
+        selectize = FALSE
+      ),
+      actionLink("remove", "Remove detail tabs")
+    )
+      )
     )
     # fluidRow(
     #   column(2),
