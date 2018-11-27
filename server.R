@@ -51,8 +51,8 @@ server <- function(input, output) {
     paste("위의 데이터는", kpi_1113$날짜[375], "의 데이터입니다.")
   })
   
-  output$table1 <- DT::renderDataTable(kpi_1113, server = FALSE, filter = 'top',options = list(
-    autoWidth = TRUE,
+  output$table1 <- DT::renderDataTable(kpi_1113, server = FALSE, filter = 'top',
+                                       options = list(order = list(1, 'desc'),
     columnDefs = list(list(width = '200px', targets = "_all"))
   ))  
   
