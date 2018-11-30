@@ -21,6 +21,10 @@ ui <- dashboardPage(
     tabItems(
       
       tabItem(tabName = "dashboard",
+              
+              
+    h3(textOutput("help_text")),
+    
     fluidRow(
       # A static valueBox
       valueBoxOutput("salesBox"),
@@ -30,16 +34,8 @@ ui <- dashboardPage(
       
       valueBoxOutput("approvalBox")
     ),
+  
     fluidRow(
-      column(2),
-      column(8, textOutput("help_text")),
-      column(2)
-      ),
-    fluidRow(
-      box(DT::dataTableOutput("table1"))
-    ),
-    fluidRow(
-      
       valueBoxOutput("vbox1", width = 2),
       valueBoxOutput("vbox2", width = 2),
       valueBoxOutput("vbox3", width = 2),
@@ -62,6 +58,15 @@ ui <- dashboardPage(
       valueBoxOutput("vbox16", width = 2),
       valueBoxOutput("vbox17", width = 2),
       valueBoxOutput("vbox18", width = 2)
+    ),
+    fluidRow(
+      valueBoxOutput("vbox19", width = 2),
+      valueBoxOutput("vbox20", width = 2),
+      valueBoxOutput("vbox21", width = 2)
+    ),
+    fluidRow(
+      box(DT::dataTableOutput("table1")),
+      box(DT::dataTableOutput("table2"))
     )
 
     # tabsetPanel(
